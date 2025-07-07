@@ -8,12 +8,14 @@ import passport from "passport";
 import { Strategy as GoogleStrategy } from "passport-google-oauth20";
 import googleAuth from "./middleware/googleAuth.js";
 import userRouter from "./routes/user.js";
-import errorHandler from "./middleware/errorHandler.js"
+import errorHandler from "./middleware/errorHandler.js";
+import dotenv from "dotenv";
 
 const app = express();
 
 // Load environment variables
-dotenv.config({ path: "./config/config.env" });
+// dotenv.config({ path: "./config/config.env" });
+dotenv.config({ path: ".env" });
 
 
 
