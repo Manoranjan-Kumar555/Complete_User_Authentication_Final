@@ -33,11 +33,11 @@ jobs:
         working-directory: ./server
         run: npm install
 
-      - name: Create backend config.rnv file
-        working-directory: ./server/config
+      - name: Create frontend .env file
+        working-directory: ./client
         run: |
-              touch config.rnv
-               echo "${{ secrets.PROD_BACKEND_CONFIG }}" > config.rnv
+          touch .env
+          echo "${{ secrets.PROD_FRONTEND_ENV }}" > .env
 
       - name: Start backend with PM2
         working-directory: ./server
